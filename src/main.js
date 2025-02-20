@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	const urlParams = new URLSearchParams(window.location.search);
 	const clickTag = urlParams.get(SEARCH_PARAM_KEY) || CLICK_TAG_FALLBACK;
 
+	const preventGestureStart = (e) => e.preventDefault();
+
+	document.addEventListener('gesturestart', preventGestureStart, {
+		passive: false
+	});
+
+	window.addEventListener('beforeunload', () => {
+		document.removeEventListener('gesturestart', preventGestureStart);
+	});
+
 	const slider = document.querySelector(`.${CLASSES.slider}`);
 
 	const slideIn = createSlideIn(clickTag);
