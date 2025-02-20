@@ -1,0 +1,10 @@
+export { default as slideInHl1 } from './hl1.webp';
+export { default as slideInHl2 } from './hl2.webp';
+export { default as slideInImg1 } from './img1.webp';
+export { default as slideInImg2 } from './img2.webp';
+export { default as slideInImg3 } from './img3.webp';
+export { default as slideInImg4 } from './img4.webp';
+export { default as slideInImg5 } from './img5.webp';
+export { default as slideInImg6 } from './img6.webp';
+export { default as slideInImg7 } from './img7.webp';
+export { default as slideInLegal } from './legal.webp';

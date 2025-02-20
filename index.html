@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Penny Mobile Ad</title>
+
+		<meta charset="UTF-8" />
+		<meta name="apple-mobile-web-app-title" content="Penny" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<link rel="preload" href="/bg.webp" as="image" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="/favicon-96x96.png"
+			sizes="96x96"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+
+		<style>
+			:root {
+				--portrait-min-height: 480px;
+				--landscape-min-height: 860px;
+				--logo-min-height: 40px;
+				--logo-max-height: 65px;
+				--logo-bg-color: #cd1316;
+				--root-bg-image: url('/bg.webp');
+				--root-bg-gradient: radial-gradient(
+					ellipse,
+					#1c9d61 0%,
+					#136b42 100%
+				);
+			}
+
+			#root {
+				display: flex;
+				height: 100dvh;
+				min-height: var(--portrait-min-height);
+				background: var(--root-bg-image), var(--root-bg-gradient);
+				background-size: cover;
+				background-position: center;
+			}
+
+			body {
+				margin: 0;
+			}
+
+			img {
+				color: transparent;
+			}
+
+			.slider {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				min-height: var(--portrait-min-height);
+				max-height: var(--landscape-min-height);
+				max-width: 740px;
+				margin: auto;
+			}
+
+			.slide {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				display: grid;
+			}
+
+			.slide-item {
+				height: auto;
+				align-self: center;
+				justify-self: center;
+			}
+
+			.logo {
+				position: fixed;
+				z-index: 1;
+				bottom: 0;
+				width: 100%;
+				height: 7dvw;
+				min-height: var(--logo-min-height);
+				max-height: var(--logo-max-height);
+				background-color: var(--logo-bg-color);
+
+				& img {
+					position: absolute;
+					bottom: 0;
+					width: auto;
+					height: 100%;
+				}
+			}
+
+			@media screen and (orientation: portrait) {
+				body {
+					touch-action: none;
+				}
+			}
+
+			@media screen and (orientation: landscape) {
+				#root {
+					min-height: var(--landscape-min-height);
+				}
+
+				.slider {
+					min-height: var(--landscape-min-height);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root">
+			<div class="slider"></div>
+			<div class="logo">
+				<img
+					loading="eager"
+					alt="Penny logo"
+					src="data:image/webp;base64,
+						UklGRmQEAABXRUJQVlA4TFcEAAAvswAQEJfluG0jSeoT89/jtfmHOSYw
+						1ZsDw7ZtI9G9d/+FhaBt24Q/r7P66vkXEiTVhDckgAAgDQLgEMQoMYyI
+						gbspRguAGAHk8DSkAQjSxIBgABIAkOZwBWUqBUkHYtLEBKKhSHVA/txp
+						ih3TUBoCd+ewABFQBNCQmDS3A2lint3qwQMtPSgQJw18/2fIGF3m8rqn
+						L3vsZY198vu+IV3G8n5mjSHXYSxDuowxpC1DQNHaNkOS9LetsW3btm3b
+						tm3PNKbXnDXrvcSI+CIyL2A3ov8TwP95vWextb0WnA5tSww83xa+Fri3
+						Lezs3BYObUv7LrBjm5qPA1He6T5LWwIssHBZYKKFHROXByzc39RFvhOm
+						TsvHgjRWehF4nKgP0E+wfb4OoQ7AO6XUd1842kvp4GtQashnv0Rmp+Bo
+						onlAqdLos/AE4IJiuz2HhCd7FfPsNPV8TkqSFbexNNE+wOTLTquwHlgr
+						1XsWCCBdccqVUeTU0o9haKK78FDr6VwTLgHjJTvr9A+VQj9lHrDCxFJy
+						+jADoyIRcFSzh8AW4T3QqHVzSkMD4aDSCBQp+/NyRLnT3Hx7uLTdxEET
+						VWBpxGhgigBgkfcBCy8CFIOZJvYlr0uFItwJSm+F2CER1gZdQg1Ac8xI
+						eCQcAvopFz6Y2pKbIUJPT4uiFkWVx8wHC48BrsZYM0eFB8ARZe4oZR25
+						LRPmeEjTM8pii/gorAI2Rc1mqYCrFJvYmfyauMfzIk1Fd7EdeBplG28L
+						54BJUcaQULFnsCA/yc9T5Y5nXBoZ4GRc1QrhNdApblVFqI/nWJIF5PeE
+						grvIsm5wVsRZsQBg8cUWnuchRQM5XqGs3bZhVrWp/dKMdYYnEGuAtgTq
+						Xt/wBDfyNFyJLt+cZrVTncUI4GYmd32n4iaQ56oMjq5Kc86x8LiauBXA
+						NmFaAoJRFeTa0s9mTJo3wEth1/a4U8B0gfp0I2JOBD7Lxct0C6FBWHBH
+						BDgr3KYk6hnQNVTH7qjuoVMRQ3C/+aNQKBQ+ZXcmVcNlwMR7RK4S2lkS
+						BWDhUVAaMyuEVoz7Y8H/Z2ar0vQ+DPBeIXa0AMRURKyE5TE7hNHSduf7
+						Qvj3rEYLNfPcxWt238V/SSiKqg91AcZHDAXuCKeBmNtCR6UH7j9C4buM
+						6oRJRK8X9MmAhacCzyOWAnuEF8CUiPbQTFPfOl8V1F8yMnFL3IREW+Cd
+						sBWgr3YUmCMAvIogeNHUFbjfSv9m8065Gtch0TW4KFxzrmuPgZ6hKodB
+						UpdQudIB79fSX9lcVJrjLHELrBdaHTpIAEWhYZ5b0tTAAFPv+ZB+zma9
+						QnRLKmC8gPewUupYeJmHTsoW33pTZxD8Tfkim/FCY9y1RB2AplAHH5XC
+						AOCecNx3XLnmeWpqDaLwE9k2CePjtiQaD1h4YmCtsAA4IDzxUS20epqk
+						i8qXf/s+kXGzSMLmtADNYcLNYdzmMOHmMN5mGf2HXwt/fvqc/4QOAA=="
+				/>
+			</div>
+		</div>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>
